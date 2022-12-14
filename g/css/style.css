@@ -1,0 +1,17 @@
+body{
+      background-color: lightgray;
+
+}
+
+a{
+  color: #ff3300;
+}
+img{
+  border: 3px solid black;
+
+
+}
+h1,h2,h3{
+  border: 1px dashed black;
+  color: brown;
+}
