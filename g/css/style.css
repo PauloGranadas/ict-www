@@ -4,7 +4,7 @@ body{
       font-family: calibri;
 }
 /* pode-se expecificar, como abaixo, afectar os links dentro de paragrafos */
-p a{
+a{
   color: #ff3300;
 }
 
@@ -16,8 +16,7 @@ h1,h2,h3{
   border: 1px dashed black;
   color: brown;
 }
-#copyright{
+.reg{
   text-align: center;
   font-style: italic;
-
 }
