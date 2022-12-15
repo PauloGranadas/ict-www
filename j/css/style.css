@@ -1,0 +1,39 @@
+a{
+    background-color: #046380;
+}
+
+a:hover{
+    background-color: #046380;
+}
+
+blockquote:hover{
+    background-color: #002F2F;
+    color: #EFECCA;
+}
+
+ article:nth-child(3){
+    background-color: #FCF9D5;
+}
+
+article:nth-child(4){
+    background-color: #EFECCA;
+}
+
+article:nth-child(5){
+    background-color: #D6D3B4;
+}
+
+p:first-child {
+    color: #046380;
+}
+
+blockquote:nth-child(even){
+    background-color: #FFFCEA;
+}
+
+dfn{
+    background-color: #E6E2AF;
+}
+#content :first-child{
+    background-color: #E6E2AF;
+}
