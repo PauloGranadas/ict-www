@@ -2,20 +2,23 @@ nav{
   color: #B64926;
   background: #FFF0A5;
 }
+
 nav a{
   color: #B64926;
-  /* background: #FFF0A5; */
 }
+
 header h1, h2{
   background: #FFB03B;
-
 }
+
 section > p{
   color: #468966;
 }
+
 section header{
   color:  #8E2800;
 }
+
 footer a{
   color: #B64926;
 }
