@@ -1,22 +1,22 @@
+footer {
+  text-align: center;
+  font-style: italic;
+}
 
-body{
+body {
       background-color: lightgray;
       font-family: calibri;
 }
 
-a{
+a {
   color: #ff3300;
 }
 
-img{
+img {
   border: 3px solid black;
 }
 
-h1,h2,h3{
+h1,h2,h3 { 
   border: 1px dashed black;
   color: brown;
-}
-.copyright{
-  text-align: center;
-  font-style: italic;
 }
