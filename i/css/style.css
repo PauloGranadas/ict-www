@@ -1,3 +1,11 @@
+/* RESET BROWSER */
+
+/* *{
+  margin: 0;
+  padding: 0;
+  color: 0;
+} */
+
 nav{
   color: #B64926;
   background: #FFF0A5;
@@ -7,12 +15,12 @@ nav a{
   color: #B64926;
 }
 
-header h1, h2{
+#content > header, body > header{
   background: #FFB03B;
 }
 
 section > p{
-  color: #468966;
+  color: hsl(149, 32%, 41%);
 }
 
 section header{
