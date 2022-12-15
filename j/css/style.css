@@ -1,8 +1,25 @@
-a{
+h1,
+nav,
+footer {
+    color: #EFECCA;
+    background-color: #002F2F;
+}
+
+a {
+    color: #EFECCA;
+}
+
+/* a{
+    background-color: #046380;
+} */
+/* errado, era so para um dos links que tinha um id */
+
+#current{
     background-color: #046380;
 }
 
-a:hover{
+/* faltava nav para expecificar  */
+nav a:hover{
     background-color: #046380;
 }
 
@@ -11,7 +28,7 @@ blockquote:hover{
     color: #EFECCA;
 }
 
- article:nth-child(3){
+ /* article:nth-child(3){
     background-color: #FCF9D5;
 }
 
@@ -21,19 +38,44 @@ article:nth-child(4){
 
 article:nth-child(5){
     background-color: #D6D3B4;
+} */
+/* melhor fazer da forma seguinte */
+
+article:nth-of-type(2){
+    background-color: #FCF9D5;
+}
+
+article:nth-of-type(3){
+    background-color: #EFECCA;
+}
+
+article:nth-of-type(4){
+    background-color: #D6D3B4;
 }
 
 p:first-child {
     color: #046380;
 }
-
-blockquote:nth-child(even){
+/* tambem pode ser como a seguir */
+/* blockquote:nth-child(even){
+    background-color: #FFFCEA;
+} */
+/* desta forma usa steps...mudar 2 para 3 para perceber */
+blockquote:nth-child(2n){
     background-color: #FFFCEA;
 }
 
 dfn{
     background-color: #E6E2AF;
 }
-#content :first-child{
+
+/* sem o espaço entre content e os dois pontos, nao funciona */
+/* #content :first-child{
+    background-color: #E6E2AF;
+}  */
+
+/* or */
+#content > * :first-child{
     background-color: #E6E2AF;
 }
+/* ' >* ' -> seleccionar tudo... */
