@@ -9,7 +9,6 @@
                 display: grid;
                 grid-template-columns: 200px 200px 200px;
                 grid-template-rows: 80px 100px 100px 100px 80px;
-
             }
 
             .grid-item{
@@ -20,7 +19,8 @@
                 padding: 20px;
             }
 
-            .grid-item:first-child{
+            .grid-item:first-child,
+            .grid-item:last-child{
                 background-color: darkmagenta;
                 grid-column: 1/ span 3;
             }
@@ -36,10 +36,11 @@
                 grid-column: 1 / span 2;
                 background-color: darkorange;
             }
-            .grid-item:last-child{
+            /* porque repete a cor e span do first-child, pode-se meter tudo na mesma declaração */
+            /* .grid-item:last-child{
                 grid-column: 1 / span 3;
                 background-color: darkmagenta;
-            }
+            } */
 
         </style>
     </head>

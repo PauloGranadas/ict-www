@@ -2,64 +2,67 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, inicial-scale=1.0">
+    
     <title>Grid Student</title>
     <style media="screen">
+
       body {
-        height: 100vh; /* para definir a altura da pagina a cobrir toda a altura */
+        height: 100vh;
         margin: 0;
       }
 
-      .grid-container{
-        display: grid;
-        height: 100%;
-        /* grid-template-columns: 100px 600px; */
-        grid-template-columns: 100px auto;/*  corrigido para auto, para se ajustar a pagina */
-        grid-template-rows: 80px 50px auto 50px; /*  corrigido para auto, para se ajustar a pagina */
-        gap: 15px;
-      }
-
-      .grid-item{
-        text-align: center;
+      .grid-item {
         background-color: lightgray;
         border: 1px solid black;
-        padding: 5px;
+        font-size: 30px;
       }
 
-      .grid-header{
-        grid-column: 1 / span 2;
-      }
-
-      .grid-navigation{
-        grid-column: 1 / span 2;
-      }
-
-      .grid-left-menu{
-      }
-      /* truque para centralizar texto verticalmente / FLEXBOX */
-      .grid-content{ 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .grid-footer{
-        grid-column: 1 / span 2;
-     }
-
-      .grid-navigation ul{
-        padding-inline-start:0;
-      }
-      .grid-navigation ul li{
-        display: inline-block;
-      }
-      .grid-navigation ul li a{
-        text-decoration: none;
+      a {
         color: inherit;
       }
-      main{
-        padding: 20px;
+
+      .grid-navigation ul{
+          padding-inline-start: 0;
+        }
+
+        .grid-navigation ul li{
+          display: inline-block;
+        }
+
+      @media screen and (min-width: 1001px) {
+        .grid-container{
+          display: grid;
+          grid-template-columns: 150px auto;
+          grid-template-rows: 80px 80px auto 80px;
+          gap: 20px;
+        }
+
+        .grid-header, .grid-navigation, .grid-footer{
+          grid-column-start: 1;
+          grid-column-end: 3;
+        }
+
       }
-    
+
+      @media screen and (max-width: 1000px) {
+        .grid-container{
+          display: grid;
+          grid-template-columns: auto;
+          grid-template-rows: 80px 80px auto auto 80px;
+          gap: 20px;
+        }
+
+        .grid-left-menu ul{
+          padding-inline-start: 0;
+        }
+        .grid-left-menu ul li{
+          display: inline-block;
+        }
+
+      }
+
+      
 
     </style>
   </head>

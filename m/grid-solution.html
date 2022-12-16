@@ -2,50 +2,47 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Grid Student</title>
+    <meta name="viewport" content="width=device-width, inicial-scale=1.0">
+    <title></title>
     <style media="screen">
-      body {
-        height: 100vh; /* para definir a altura da pagina a cobrir toda a altura */
-        margin: 0;
-      }
 
-      .grid-container{
+      @media screen and (min-width:1000px){
+        /* CSS code for pc's and desktops */
+        .grid-container{
         display: grid;
         height: 100%;
-        /* grid-template-columns: 100px 600px; */
-        grid-template-columns: 100px auto;/*  corrigido para auto, para se ajustar a pagina */
-        grid-template-rows: 80px 50px auto 50px; /*  corrigido para auto, para se ajustar a pagina */
+        grid-template-columns: 100px auto;/*  a diferença principal è aqui */
+        grid-template-rows: 80px 50px auto 50px; 
         gap: 15px;
+       }
       }
-
-      .grid-item{
-        text-align: center;
+      @media screen and (max-width:1000px){
+        /* css code for mobiles */
+        .grid-container{
+        display: grid;
+        height: 100%;
+        grid-template-columns: auto; /* as colunas passaram a ser auto para se alinharem*/
+        grid-template-rows: 80px 50px 50px auto 50px; 
+        gap: 15px;
+        }   
+      }
+      .grid-container{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 120px 80px auto  80px;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px; /* or grid-gap for column+row */
+        text-align: left;
+      }
+      .grid-item {
         background-color: lightgray;
         border: 1px solid black;
-        padding: 5px;
+        font-size: 30px;
       }
-
-      .grid-header{
-        grid-column: 1 / span 2;
+      .grid-header, .grid-navigation, .grid-footer{
+        grid-column: 1 / span 3;
+        text-align: center;
       }
-
-      .grid-navigation{
-        grid-column: 1 / span 2;
-      }
-
-      .grid-left-menu{
-      }
-      /* truque para centralizar texto verticalmente / FLEXBOX */
-      .grid-content{ 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .grid-footer{
-        grid-column: 1 / span 2;
-     }
-
       .grid-navigation ul{
         padding-inline-start:0;
       }
@@ -59,8 +56,7 @@
       main{
         padding: 20px;
       }
-    
-
+      
     </style>
   </head>
   <body>
