@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>ex1</title>
+        <link rel="stylesheet" type="text/css" href="boxmodel-student.css">
+        <meta charset="UTF-8">
+        <style>
+            .grid-container{
+                display: grid;
+                grid-template-columns: 200px 200px 200px;
+                grid-template-rows: 80px 100px 100px 100px 80px;
+                
+            }
+            
+            .grid-item{
+                border: 1px solid black;
+                background-color: lightgray;
+                font-size: 35px;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .grid-item:first-child{
+                background-color: darkmagenta;
+                grid-column: 1/ span 3;
+            }
+            .grid-item:nth-child(2){
+                grid-row: 2 / span 2;
+                background-color: cyan;
+            }
+            .grid-item:nth-child(5){
+                grid-column: 2 / span 2;
+                background-color: deepskyblue;
+            }
+            .grid-item:nth-child(6){
+                grid-column: 1 / span 2;
+                background-color: darkorange;
+            }
+            .grid-item:last-child{
+                grid-column: 1 / span 3;
+                background-color: darkmagenta;
+            }
+
+        </style>
+    </head>
+    
+<body>
+
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+    </div>
+
+</body>
+</html>
