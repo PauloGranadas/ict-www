@@ -2,62 +2,85 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-    body{
-      margin: 10px;
-    }
-    .grid-item {
-      background-color: lightgray;
-      border: 1px solid black;
-      font-size: 30px;
-    }
-      @media screen and (min-width: 1000px){
-        /* CSS code for PC's/Notebooks */
+    <meta name="viewport" content="width=device-width, inicial-scale=1.0">
+    
+    <title>Grid Student</title>
+    <style media="screen">
+
+      body {
+        height: 100vh;
+        margin: 0;
+      }
+
+      .grid-item {
+        background-color: lightgray;
+        border: 1px solid black;
+        font-size: 30px;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .grid-navigation ul{
+          padding-inline-start: 0;
+        }
+
+        .grid-navigation ul li{
+          display: inline-block;
+        }
+
+      @media screen and (min-width: 1001px) {
         .grid-container{
           display: grid;
-          grid-template-columns: 200px auto  ;
-          grid-template-rows: 120px  auto 80px ;
-          grid-column-gap: 20px;
-          grid-row-gap: 20px; /* or grid-gap for column+row */
-          text-align: left;
-          min-height: 1000px;
+          grid-template-columns: 150px auto;
+          grid-template-rows: 80px 80px auto 80px;
+          gap: 20px;
         }
-        .grid-header, .grid-footer{
-          grid-column: 1 / span 2;
-          text-align: center;
+
+        .grid-header, .grid-navigation, .grid-footer{
+          grid-column-start: 1;
+          grid-column-end: 3;
+
         }
+
       }
+
       @media screen and (max-width: 1000px) {
-         /* CSS-code for smartphones and tablets */
-          .grid-container{
-            display: grid;
-            grid-template-columns: auto;
-            grid-template-rows: 120px  80px auto 80px ;
-            grid-column-gap: 20px;
-            grid-row-gap: 20px; /* or grid-gap for column+row */
-            text-align: left;
-            min-height: 1000px;
-          }
-          .grid-left-menu ul{
-            padding-inline-start:0;
-            float:left;
-          }
-          .grid-left-menu ul li{
-            display: inline-block;
-          }
-          .grid-left-menu ul li a{
-            text-decoration: none;
-            color: inherit;
-          }
+        .grid-container{
+          display: grid;
+          grid-template-columns: auto;
+          grid-template-rows: 80px 80px auto auto 80px;
+          gap: 20px;
+        }
+
+        .grid-left-menu ul{
+          padding-inline-start: 0;
+        }
+        .grid-left-menu ul li{
+          display: inline-block;
+        }
+
       }
+
+      
+
     </style>
   </head>
   <body>
+  
     <div class="grid-container">
       <header class="grid-item grid-header">Header</header>
+      <nav class="grid-item grid-navigation">
+          <ul>
+            <li> <a href="#Link1">Link 1</a></li>
+            <li> <a href="#Link2">Link 2</a> </li>
+            <li> <a href="#Link3">Link 3</a> </li>
+            <li> <a href="#Link4">Link 4</a> </li>
+          </ul>
+      </nav>
       <aside class="grid-item grid-left-menu">
+        Left Menu
         <ul>
           <li>Link1</li>
           <li>Link2</li>
