@@ -10,11 +10,20 @@
 
         </style>
         <script>/* javaScript */
-            
+            function askAge(){
+                var age = prompt("What's your age?");
+                if (age >=18 ){
+                    alert ("Adult!");
+                }
+                else{
+                    alert("minor!");
+                }
+
+            }
         </script>
 
 </head>
-    <body onload="">
+    <body onload="askAge()">
 
         
 

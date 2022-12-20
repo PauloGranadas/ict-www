@@ -7,45 +7,62 @@
     <title>JavaScript Exercice 10</title>
     
     <style>img{height:50px;cursor: pointer;}
-            img:hover{height:60px;}
+            img:hover{background-color:rgb(197, 197, 247);}
+
+            #divOutput{
+                color: green;
+            }
+
+            label{
+                width: 120px;
+                display: inline-block;
+                font-weight: bold;
+            }
     </style>  
 
 <script>
 
     function visaClicked(){
-        document.getElementById("visa").style.border = "3px solid green";
-        document.getElementById("paypal").style.border = "";
-        document.getElementById("mastercard").style.border = "";
+        document.getElementById("visa").style.backgroundColor = "Blue";
+        document.getElementById("paypal").style.backgroundColor = "";
+        document.getElementById("mastercard").style.backgroundColor = "";
     }
     function paypalClicked(){
-        document.getElementById("paypal").style.border = "3px solid green";
-        document.getElementById("visa").style.border = "";
-        document.getElementById("mastercard").style.border = "";
+        document.getElementById("paypal").style.backgroundColor = "Blue";
+        document.getElementById("visa").style.backgroundColor = "";
+        document.getElementById("mastercard").style.backgroundColor = "";
     }
     function mastercardClicked(){
-        document.getElementById("mastercard").style.border = "3px solid green";
-        document.getElementById("visa").style.border = "";
-        document.getElementById("paypal").style.border = "";
+        document.getElementById("mastercard").style.backgroundColor = "Blue";
+        document.getElementById("visa").style.backgroundColor = "";
+        document.getElementById("paypal").style.backgroundColor = "";
     }
     function paymentSummary(){
+        var name = document.getElementById("name").value;
         var payment = parseFloat(document.getElementById("price").value);
         var email = document.getElementById("email").value;
-        document.getElementById("payButton").innerHTML = "A payment of " + payment +
+        document.getElementById("divOutput").innerHTML = "Hi " + name + ". A payment of " + payment +
         "&euro; will be sent to " + "<br>" + email + ". Thanks for the order!";
     }
 </script>
 
 </head>
 <body>
-    Name<input id="name" type="text" autocomplete="off"><br>
-    Price<input id="price" type="text"><br>
-    E-Mail<input id="email" type="text"><br>
+    <div><label>Name: </label><input id="name" type="text" autocomplete="off"></div><!-- autocomplete off para apagar dados da cache ao reload pagina -->
+    <div><label>Price: </label><input id="price" type="text"></div>
+    <div><label>E-Mail: </label><input id="email" type="text"></div>
+    Please choose the payment method:<br>
+    <table>
+        <tr>
+            <td><img id="visa" src="img/visa.png" alt="" onload="visaClicked()" onclick="visaClicked()"></td>
+            <td><img id="paypal" src="img/paypal.png" alt="" onclick="paypalClicked()"></td>
+            <td><img id="mastercard" src="img/mastercard.png" alt="" onclick="mastercardClicked()"><br></td>
+        </tr>
 
-    <img id="visa" src="img/visa.png" alt="" onload="visaClicked()" onclick="visaClicked()">
-    <img id="paypal" src="img/paypal.png" alt="" onclick="paypalClicked()">
-    <img id="mastercard" src="img/mastercard.png" alt="" onclick="mastercardClicked()"><br>
-    <button id="payButton" onclick="paymentSummary()">Pay</button>
+    </table>
 
+    <button type="button" id="payButton" onclick="paymentSummary()">Pay</button>
+    <div id="divOutput"></div>
 </body>
 
 </html>

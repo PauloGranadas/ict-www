@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New File</title>
+        <style>/* CSS */
+
+
+        </style>
+        <script>/* javaScript */
+            function checkEquality(){
+                var number1 = parseInt(document.getElementById("number1").value);
+                var number2 = parseInt(document.getElementById("number2").value);
+            
+                if (number1 == number2){
+                    document.getElementById("outputMessage").innerHTML="Numbers are equal" ;
+                }
+                else{
+                    document.getElementById("outputMessage").innerHTML="Numbers are NOT equal" ;
+                }
+
+            }
+        </script>
+
+</head>
+    <body>
+        <div><label>Number1: <input id="number1" type="text"></label></div>
+        <div><label>Number2: <input id="number2" type="text"></label></div>
+
+        <button onclick="checkEquality()">Check</button>
+
+        <div id="outputMessage"></div>
+
+
+        
+
+    </body>
+
+</html>

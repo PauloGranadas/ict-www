@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      img{height:300px;cursor: pointer;}
+      img:hover{height:350px;}
+    </style>
+
+    <script type="text/javascript">
+        function img1Clicked(){
+          document.getElementById("img1").style.border = "10px solid lime"
+          document.getElementById("img1").style.borderRadius = "20px"
+          document.getElementById("img2").style.border = ""
+          document.getElementById("img3").style.border = ""
+        }
+        function img2Clicked(){
+          document.getElementById("img1").style.border = ""
+          document.getElementById("img2").style.border = "10px solid lime"
+          document.getElementById("img2").style.borderRadius = "20px"
+          document.getElementById("img3").style.border = ""
+        }
+        function img3Clicked(){
+          document.getElementById("img1").style.border = ""
+          document.getElementById("img2").style.border = ""
+          document.getElementById("img3").style.border = "10px solid lime"
+          document.getElementById("img3").style.borderRadius = "20px"
+        }
+    </script>
+  </head>
+  <body>
+      <img id="img1" src="img/fortnite.jpg" onclick="img1Clicked()">
+      <img id="img2" src="img/tlou2.jpg" onclick="img2Clicked()">
+      <img id="img3" src="img/got.jpg" onclick="img3Clicked()">
+  </body>
+</html>

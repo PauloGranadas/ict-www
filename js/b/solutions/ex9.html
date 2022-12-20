@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      table, tr, td{
+        border: 1px solid black;
+      }
+    </style>
+
+    <script type="text/javascript">
+        function img1Clicked(){
+          document.getElementById("td1").style.backgroundColor = "blue"
+          document.getElementById("td2").style.backgroundColor = ""
+          document.getElementById("td3").style.backgroundColor = ""
+        }
+        function img2Clicked(){
+          document.getElementById("td1").style.backgroundColor = ""
+          document.getElementById("td2").style.backgroundColor = "blue"
+          document.getElementById("td3").style.backgroundColor = ""
+        }
+        function img3Clicked(){
+          document.getElementById("td1").style.backgroundColor = ""
+          document.getElementById("td2").style.backgroundColor = ""
+          document.getElementById("td3").style.backgroundColor = "blue"
+        }
+    </script>
+  </head>
+  <body onload="img1Clicked()">
+      <table>
+        <tr>
+          <td id="td1"><img src="img/visa.png" onclick="img1Clicked()"></td>
+          <td id="td2"><img  src="img/mastercard.png" onclick="img2Clicked()"></td>
+          <td id="td3"><img  src="img/paypal.png" onclick="img3Clicked()"></td>
+        </tr>
+      </table>
+  </body>
+</html>

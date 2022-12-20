@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript C_04</title>
+        <style>/* CSS */
+
+
+        </style>
+        <script>/* javaScript */
+        function checkGrade(){
+            var num = parseFloat(document.getElementById("grade").value);
+            if( num >= 1 && num <= 9){
+                document.getElementById("divOutput").innerHTML="Very Bad";
+                document.getElementById("divOutput").style.color="red";
+            }
+            else if (num >= 10 && num <= 19){
+                document.getElementById("divOutput").innerHTML="Bad";
+                document.getElementById("divOutput").style.color="red"; 
+            }
+            else if (num >= 20 && num <= 29){
+                document.getElementById("divOutput").innerHTML="Insufficient";
+                document.getElementById("divOutput").style.color="red"; 
+            }
+            else if (num >= 30 && num <= 37){
+                document.getElementById("divOutput").innerHTML="Sufficient";
+                document.getElementById("divOutput").style.color="green"; 
+            }
+            else if (num >= 38 && num <= 41){
+                document.getElementById("divOutput").innerHTML="Satisfying";
+                document.getElementById("divOutput").style.color="green"; 
+            }
+            else if (num >= 42 && num <= 47){
+                document.getElementById("divOutput").innerHTML="Good";
+                document.getElementById("divOutput").style.color="green"; 
+            }
+            else if (num >= 48 && num <= 52){
+                document.getElementById("divOutput").innerHTML="Very good.";
+                document.getElementById("divOutput").style.color="green"; 
+            }
+            else if (num >= 53 && num <= 60){
+                document.getElementById("divOutput").innerHTML="Excellent";
+                document.getElementById("divOutput").style.color="green"; 
+            }
+            else{
+                document.getElementById("divOutput").innerHTML="Invalid grade.";
+                document.getElementById("divOutput").style.color="red";
+            }
+        }
+            
+        </script>
+
+</head>
+    <body onload="">
+        <label>Number: <input id="grade" type="text"></label><br>
+        <label><button type="button" onclick="checkGrade()">Check</button></label><br>
+        <div id="divOutput"></div>
+
+        
+
+    </body>
+
+</html>

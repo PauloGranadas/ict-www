@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript C_08</title>
+        <style>/* CSS */
+            table{
+                border: 1px solid black;
+            }
+            img{
+                height: 20px;
+            }
+
+        </style>
+        <script>/* javaScript */
+        function checkData(){
+            var name = document.getElementById("name").value;
+            var grade = document.getElementById("grade").value
+
+            if (name.length < 3){
+                document.getElementById("errorMessage").innerHTML="Invalid name: ate least 3 characters required";
+                document.getElementById("errorMessage").style.color="orange";
+
+            }
+            else if(isNaN(grade)){
+                document.getElementById("errorMessage").innerHTML="Invalid grade: must be a number";
+                document.getElementById("errorMessage").style.color="orange";
+            }
+        }
+       
+        </script>
+</head>
+    <body>
+<table>
+    <tr>
+        <td>
+            <div id="errorMessage"></div><br>
+            Student Name: <br>
+            <input id="name" type="text"><br>
+            Grade: <br>
+            <input id="grade" type="text"><br>
+        </td>
+        
+    </tr>
+    <td>
+        <button type="button" onclick="checkData()">ADD</button>
+        <ol>
+            <li>Dren (45) <img src="/js/c/img/m.png" alt=""></li>
+            <li>Sandrina (48) <img src="/js/c/img/w.png" alt=""></li>
+        </ol>
+        
+        <!-- <input id="radioButton" type="radio" name="genderSelection" value="M" checked>
+        <input id="radioButton" type="radio" name="genderSelection" value="W"> -->
+        
+    </td>
+</table>
+
+    </body>
+</html>

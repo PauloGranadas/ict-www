@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript C_03</title>
+        <style>/* CSS */
+
+
+        </style>
+        <script>/* javaScript */
+        function checkNumber(){
+            var num = parseFloat(document.getElementById("number").value);
+            if( num == 0){
+                document.getElementById("divOutput").innerHTML="Neutral";
+                document.getElementById("divOutput").style.color="gray";
+            }
+            else if (num > 0){
+                document.getElementById("divOutput").innerHTML="Positive";
+                document.getElementById("divOutput").style.color="green"; 
+            }
+            else if (num < 0){
+                document.getElementById("divOutput").innerHTML="Negative";
+                document.getElementById("divOutput").style.color="red"; 
+            }
+        }
+            
+        </script>
+
+</head>
+    <body onload="">
+        <label>Number: <input id="number" type="text"></label><br>
+        <label><button type="button" onclick="checkNumber()">Check</button></label><br>
+        <div id="divOutput"></div>
+
+        
+
+    </body>
+
+</html>

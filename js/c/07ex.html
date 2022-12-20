@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript C_07</title>
+        <style>/* CSS */
+            table{
+                border: 1px solid black;
+
+            }
+
+        </style>
+        <script>/* javaScript */
+        function checkHours(){
+            var hours = parseFloat(document.getElementById("hours").value);
+            if ( hours < 8 && hours > 17){
+                document.getElementById("outMessage").innerHTML="Sorry, but the coffe Shop is closed";
+                document.getElementById("outMessage").style.color="red";
+            }
+            else if(hours > 12 && hours < 14 ){
+                document.getElementById("outMessage").innerHTML="Sorry but Coffe Shop reopens at 14 o'clock.";
+                document.getElementById("outMessage").style.color="orange";
+            }
+            else{
+                document.getElementById("outMessage").innerHTML="Welcome to the Coffe Shop";
+                document.getElementById("outMessage").style.color="green";
+            }
+        }
+
+        </script>
+</head>
+    <body>
+<table>
+    <tr>
+        <td>
+            <label>Time(HH): <input id="hours" type="text" autocomplete="off"></label><br>
+            <label><button type="button" onclick="checkHours()">Check</button></label>
+            <div id="outMessage"></div>
+        </td>
+    </tr>
+</table>
+
+    </body>
+</html>

@@ -12,11 +12,10 @@
 
 <script>
 
-    
     function visaClicked(){
-        document.getElementById("visa").style.border = "3px solid green";
-        document.getElementById("paypal").style.border = "";
-        document.getElementById("mastercard").style.border = "";
+        document.getElementById("visa").style.backgroundColor = "Blue";
+        document.getElementById("paypal").style.backgroundColor = "";
+        document.getElementById("mastercard").style.backgroundColor = "";
     }
     function paypalClicked(){
         document.getElementById("paypal").style.border = "3px solid green";
@@ -32,10 +31,16 @@
 
 </head>
 <body>
-
-    <img id="visa" src="img/visa.png" alt="" onload="visaClicked()" onclick="visaClicked()">
-    <img id="paypal" src="img/paypal.png" alt=""onclick="paypalClicked()">
-    <img id="mastercard" src="img/mastercard.png" alt=""onclick="mastercardClicked()">
+<table>
+    <tr>
+        <td><img id="visa" src="img/visa.png" alt="" onload="visaClicked()" onclick="visaClicked()"></td>
+        <td><img id="paypal" src="img/paypal.png" alt=""onclick="paypalClicked()"></td>
+        <td><img id="mastercard" src="img/mastercard.png" alt=""onclick="mastercardClicked()"></td>
+    </tr>
+</table>
+    
+    
+    
 
 </body>
 

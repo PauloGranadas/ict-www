@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New File</title>
+        <style>/* CSS */
+
+                /* Solução menos elegante */
+        </style>
+        <script>/* javaScript */
+            function checkEqual(){
+                var number1 = parseInt(document.getElementById("number1").value);
+                var number2 = parseInt(document.getElementById("number2").value);
+                var divColor;
+            
+                if (number1 == number2){
+                    document.getElementById("outputMessage").innerHTML="The numbers are equal" ;
+                    divColor = "green";
+                }
+                else{
+                    document.getElementById("outputMessage").innerHTML="The numbers are NOT equal" ;
+                    divColor = "red";
+                }
+                document.getElementById("outouMessage").style.color = divColor;
+            }
+        </script>
+
+</head>
+    <body>
+        <div><label>Number1: <input id="number1" type="text" autocomplete="off"></label></div>
+        <div><label>Number2: <input id="number2" type="text" autocomplete="off"></label></div>
+
+        <button onclick="checkEqual()">Submit</button>
+        <div id="outputMessage"></div>      
+
+    </body>
+
+</html>
