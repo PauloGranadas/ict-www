@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 3</title>
+    
+<script>
+   
+    function foodList(){
+        first = prompt("Please, enter your first favorite food:");
+        second = prompt("Please, enter your second favorite food:");
+        third = prompt("Please, enter your third favorite food:");
+        document.getElementById("listFirst").innerHTML +=  first;
+        document.getElementById("listSecond").innerHTML += second;
+        document.getElementById("listThird").innerHTML += third;
+    }
+
+</script>
+
+</head>
+<body onload="foodList()">
+
+    <div >
+        <ol>
+            <li id="listFirst"></li>
+            <li id="listSecond"></li>
+            <li id="listThird"></li>
+        </ol>
+    
+    
+    </div>
+    
+
+</body>
+
+</html>

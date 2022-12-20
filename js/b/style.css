@@ -1,0 +1,21 @@
+
+    
+
+td{
+    align-items: center;
+    padding: 10px;
+
+}
+img{
+    height:300px;
+    cursor: pointer;
+}
+img:hover{
+    height:350px;
+    /* outline: 10px solid green; */
+}
+
+.changeColor{
+    /* outline: 10px solid green; */
+
+}

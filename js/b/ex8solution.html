@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New File</title>
+    <style>img{height:300px;cursor: pointer;}
+            img:hover{height:350px;}</style>  
+
+<script>
+
+    
+    function img1Clicked(){
+        document.getElementById("img1").style.border= "3px solid green";
+        document.getElementById("img2").style.border="";
+        document.getElementById("img3").style.border="";
+    }
+    function img2Clicked(){
+        document.getElementById("img2").style.border = "3px solid green";
+        document.getElementById("img1").style.border="";
+        document.getElementById("img3").style.border="";
+    }
+    function img3Clicked(){
+        document.getElementById("img3").style.border = "3px solid green";
+        document.getElementById("img1").style.border="";
+        document.getElementById("img2").style.border="";
+    }
+</script>
+
+</head>
+<body>
+
+    <img id="img1" src="img/fortnite.jpg" alt="" onclick="img1Clicked()">
+    <img id="img2" src="img/got.jpg" alt=""onclick="img2Clicked()">
+    <img id="img3" src="img/tlou2.jpg" alt=""onclick="img3Clicked()">
+
+</body>
+
+</html>

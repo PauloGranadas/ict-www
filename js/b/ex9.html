@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exercice 9</title>
+    
+    <style>img{height:50px;cursor: pointer;}
+            img:hover{height:70px;}
+    </style>  
+
+<script>
+
+    
+    function visaClicked(){
+        document.getElementById("visa").style.border = "3px solid green";
+        document.getElementById("paypal").style.border = "";
+        document.getElementById("mastercard").style.border = "";
+    }
+    function paypalClicked(){
+        document.getElementById("paypal").style.border = "3px solid green";
+        document.getElementById("visa").style.border = "";
+        document.getElementById("mastercard").style.border = "";
+    }
+    function mastercardClicked(){
+        document.getElementById("mastercard").style.border = "3px solid green";
+        document.getElementById("visa").style.border = "";
+        document.getElementById("paypal").style.border = "";
+    }
+</script>
+
+</head>
+<body>
+
+    <img id="visa" src="img/visa.png" alt="" onload="visaClicked()" onclick="visaClicked()">
+    <img id="paypal" src="img/paypal.png" alt=""onclick="paypalClicked()">
+    <img id="mastercard" src="img/mastercard.png" alt=""onclick="mastercardClicked()">
+
+</body>
+
+</html>

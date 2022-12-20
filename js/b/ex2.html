@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 2</title>
+    
+<script>
+   
+    function welcome(){
+        
+        var userName = prompt ("Please, enter your name:");
+        document.getElementById("welcomeHeader").innerHTML +=  " ," + userName + "! Have a nice day!";
+
+        var welcomeHeader = document.getElementById("welcomeHeader")
+        welcomeHeader.style.color = "red";
+        welcomeHeader.style.fontStyle = "bold";
+        
+
+    }
+
+</script>
+
+</head>
+<body onload="welcome()">
+
+    <div >
+        <p id="welcomeHeader">Welcome</p> 
+
+    </div>
+    
+
+</body>
+
+</html>
