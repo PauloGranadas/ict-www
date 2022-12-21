@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      function check(){
+        var h = document.getElementById("inTime").value
+        if(h >= 8 && h<=17){
+          document.getElementById("divOutput").innerHTML = "Welcome to the Coffee Shop!"
+          document.getElementById("divOutput").style.color = "lime"
+        }
+        else{
+          document.getElementById("divOutput").innerHTML = "Sorry but the Coffe Shop is currently closed."
+          document.getElementById("divOutput").style.color = "red"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    Time (HH): <input type="number" id="inTime" autofocus> <br>
+    <button type="button" onclick="check()">Check</button> <br>
+    <div id="divOutput">
+
+    </div>
+  </body>
+</html>

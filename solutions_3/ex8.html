@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      #divError{
+        color: red
+      }
+      img{
+        height: 20px;
+      }
+    </style>
+    <script type="text/javascript">
+        function add(){
+          var error = false
+          var name = document.getElementById("inName").value
+          var grade = document.getElementById("inGrade").value
+          var radioM = document.getElementById("radioM").checked
+          var radioW = document.getElementById("radioW").checked
+
+          if(name.length < 3){
+            error = true
+            document.getElementById("divError").innerHTML += "Invalid name: at least 3 characters required."
+            document.getElementById("inName").style.border = "1px solid red"
+          }
+          if(grade.length==0 || isNaN(grade)){
+            error = true
+            document.getElementById("divError").innerHTML += "<br>Invalid grade: must be a number"
+            document.getElementById("inGrade").style.border = "1px solid red"
+          }
+          else if(parseInt(grade) < 0 || parseInt(grade) > 60){
+            error = true
+            document.getElementById("divError").innerHTML = "Invalid grade: must be between 1 and 60"
+            document.getElementById("inGrade").style.border = "1px solid red"
+          }
+
+          if(!error){
+            var source = "img/m.png"
+            if(radioW){
+                source = "img/w.png"
+            }
+            document.getElementById("olStudents").innerHTML += "<li>"+name + " ("+grade+") "+ "<img src='"+source+"'>" +"</li>"
+            document.getElementById("divError").innerHTML = ""
+            document.getElementById("inName").style.border = ""
+            document.getElementById("inGrade").style.border = ""
+          }
+        }
+    </script>
+  </head>
+  <body>
+
+    <div id="divError">
+    </div>
+    <br>
+    Student name: <br><input type="text" id="inName" autofocus> <br>
+    Grade: <br><input type="text" id="inGrade"> <br>
+    <input type="radio" id="radioM" name="radioGender" value="M" checked> M
+    <input type="radio" id="radioW" name="radioGender" value="W"> W <br>
+    <button type="button" onclick="add()">Add</button> <br>
+
+    <ol id="olStudents">
+
+    </ol>
+  </body>
+</html>

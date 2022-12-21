@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      table, tr, td{
+        border: 1px solid black;
+      }
+      span{
+        display: inline-block;
+        min-width: 60px;
+      }
+      button{
+        width: 100px;
+      }
+      body{
+        margin: 20px;
+      }
+      img{
+        cursor: pointer;
+      }
+    </style>
+
+    <script type="text/javascript">
+        function payClicked(){
+          var name = document.getElementById("inName").value
+          var email = document.getElementById("inEmail").value
+          var price = parseFloat(document.getElementById("inPrice").value)
+
+          document.getElementById("divOutput").innerHTML = "<div class='alert alert-success'>Hi "+name +", an invoice of "+price+"€ will be send to "+email+". Thanks for the order!</div>"
+        }
+        function img1Clicked(){
+          document.getElementById("td1").style.backgroundColor = "blue"
+          document.getElementById("td2").style.backgroundColor = ""
+          document.getElementById("td3").style.backgroundColor = ""
+        }
+        function img2Clicked(){
+          document.getElementById("td1").style.backgroundColor = ""
+          document.getElementById("td2").style.backgroundColor = "blue"
+          document.getElementById("td3").style.backgroundColor = ""
+        }
+        function img3Clicked(){
+          document.getElementById("td1").style.backgroundColor = ""
+          document.getElementById("td2").style.backgroundColor = ""
+          document.getElementById("td3").style.backgroundColor = "blue"
+        }
+    </script>
+  </head>
+  <body onload="img1Clicked()">
+    <div id="divOutput">
+
+    </div>
+    <br>
+    <span>Name:</span> <input class="form-control" type="text" id="inName" value="" autofocus> <br>
+    <span>Price:</span> <input accept=""class="form-control" type="text" id="inPrice" value=""> <br>
+    <span>E-Mail:</span> <input class="form-control" type="email" id="inEmail" value=""> <br>
+    Please choose a payment method: <br>
+      <table>
+        <tr>
+          <td id="td1"><img src="img/visa.png" onclick="img1Clicked()"></td>
+          <td id="td2"><img  src="img/mastercard.png" onclick="img2Clicked()"></td>
+          <td id="td3"><img  src="img/paypal.png" onclick="img3Clicked()"></td>
+        </tr>
+      </table>
+      <br>
+      <button type="button" class="btn btn-primary" onclick="payClicked()">Pay</button>
+      <button type="button" class="btn btn-secondary">Cancel</button>
+
+
+  </body>
+</html>

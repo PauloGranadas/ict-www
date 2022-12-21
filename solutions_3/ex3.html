@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+      function check(){
+        var n = document.getElementById("inNumber").value
+        if(n==0){
+          document.getElementById("divOutput").innerHTML = "Neutral."
+          document.getElementById("divOutput").style.color = "grey"
+        }
+        else if(n<0){
+          document.getElementById("divOutput").innerHTML = "Negative."
+          document.getElementById("divOutput").style.color = "red"
+        }
+        else{
+          document.getElementById("divOutput").innerHTML = "Positive."
+          document.getElementById("divOutput").style.color = "lime"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    Number: <input type="number" id="inNumber" autofocus> <br>
+    <button type="button" onclick="check()">Check</button> <br>
+    <div id="divOutput">
+
+    </div>
+  </body>
+</html>

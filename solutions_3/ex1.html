@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+        function check(){
+          var n1 = (document.getElementById("inNumber1").value)
+          var n2 = (document.getElementById("inNumber2").value)
+          if(n1==n2){
+            document.getElementById("divOutput").innerHTML = "Numbers are equal.";
+          }
+          else{
+            document.getElementById("divOutput").innerHTML = "Numbers are not equal.";
+          }
+        }
+    </script>
+  </head>
+  <body>
+    Number 1: <input type="number" id="inNumber1" value="" autofocus> <br>
+    Number 2: <input type="number" id="inNumber2" value=""> <br>
+    <button type="button" id="btnCheck" onclick="check()">Check</button> <br>
+    <div id="divOutput">
+
+    </div>
+  </body>
+</html>

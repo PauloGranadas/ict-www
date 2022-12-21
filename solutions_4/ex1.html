@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      #divError{
+        color: red
+      }
+      #divOutput{
+        color: lime
+      }
+    </style>
+    <script type="text/javascript">
+          function orderClicked(){
+            var article = document.getElementById("inArticle").value.trim()
+            var divError = document.getElementById("divError")
+            var divOutput = document.getElementById("divOutput")
+            var amount = document.getElementById("selAmount").value
+            if(article.length < 3){
+              divError.innerHTML = "Invalid article."
+              divOutput.innerHTML = ""
+            }
+            else{
+              divOutput.innerHTML = "Thank you for ordering "+amount+"x "+article;
+              divError.innerHTML = ""
+            }
+          }
+    </script>
+  </head>
+  <body>
+    <div id="divError">
+
+    </div>
+      Article: <input type="text" id="inArticle" autofocus> <br>
+      Amount: <select id="selAmount">
+                  <option value="1">x1</option>
+                  <option value="2">x2</option>
+                  <option value="3">x3</option>
+                  <option value="4">x4</option>
+                  <option value="5">x5</option>
+                </select>
+      <br>
+      <button type="button" onclick="orderClicked()">Order now</button>
+      <br>
+      <div id="divOutput">
+
+      </div>
+  </body>
+</html>

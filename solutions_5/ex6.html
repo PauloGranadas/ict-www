@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      #divError{
+        color:red;
+      }
+      img{
+        height: 50px;
+      }
+    </style>
+    <script type="text/javascript">
+        function orderNowClicked(){
+          var name = document.getElementById("inName").value.trim()
+          var selSize = document.getElementById("selSize")
+          var selToppings = document.getElementById("selToppings")
+          var divError = document.getElementById("divError")
+          var divOutput = document.getElementById("divOutput")
+
+          if(name == ""){
+            divError.innerHTML = "Error: Name cannot be empty."
+          }
+          else{
+            divError.innerHTML = ""
+            var total = parseFloat(selSize.value)
+
+            for(var i=0; i<selToppings.options.length; i++){
+              if(selToppings.options[i].selected==true){
+                total += parseFloat(selToppings.options[i].value)
+              }
+            }
+
+            if(inCoupon.checked==true){
+              total = total*0.9
+            }
+
+            divOutput.innerHTML  = "<h2>Summary</h2>"+
+                        "<b>Name:</b> "+name+"<br>"+
+                        "<b>Size:</b> "+selSize.options[selSize.selectedIndex].text+
+                        "<br><b>Toppings:</b><br> ";
+            for(var i=0; i<selToppings.options.length; i++){
+              if(selToppings.options[i].selected==true){
+                divOutput.innerHTML  += selToppings.options[i].text + "<br>"
+              }
+            }
+            divOutput.innerHTML  += "<b>10% Coupon:</b> "
+            if(inCoupon.checked==true){
+              divOutput.innerHTML  += "Yes<br>"
+            }
+            else{
+              divOutput.innerHTML  += "No<br>"
+            }
+            divOutput.innerHTML += "--------------------------<br><b>Total:</b> "+total+"€. "
+          }
+        }
+    </script>
+  </head>
+  <body>
+      <img src="img/pizza.png">
+        <img src="img/pizza.png">
+        <img src="img/pizza.png">
+        <img src="img/pizza.png">
+      <h1>Online Pizza Configurator!</h1>
+        <div id="divError">
+
+        </div>
+      Name: <input type="text" id="inName" autofocus> <br>
+      Size: <select id="selSize">
+              <option value="10">Small (10€)</option>
+              <option value="15">Medium (15€)</option>
+              <option value="20">Large (20€)</option>
+            </select>
+    <br>
+    Toppings: <br><select id="selToppings" multiple>
+                <option value="0.70">Mushroom (+0.7€)</option>
+                <option value="0.70">Chili (+0.7€)</option>
+                <option value="1.00">Cooked Ham (+1€)</option>
+                <option value="0.70">Honey (+0.7€)</option>
+                <option value="1.00">Tuna (+1€)</option>
+                <option value="1.00">Bacon (+1€)</option>
+                <option value="0.70">Olives (+0.7€)</option>
+                <option value="0.70">Pepper (+0.7€)</option>
+              </select>
+    <br>
+    10% Coupon? <input type="checkbox" id="inCoupon" value="10%"> <br>
+    <button type="button" onclick="orderNowClicked()">Order now</button>
+    <div id="divOutput">
+
+    </div>
+  </body>
+</html>

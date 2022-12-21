@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+        function compute(){
+          var a = parseInt(document.getElementById("inA").value)
+          var b = parseInt(document.getElementById("inB").value)
+          var c = parseInt(document.getElementById("inC").value)
+
+          var avg = (a+b+c)/3
+          document.getElementById("divOutput").innerHTML = "Avg: "+avg
+        }
+    </script>
+  </head>
+  <body>
+      <input type="number" id="inA" value="0" placeholder="A:" autofocus> <br>
+      <input type="number" id="inB" value="0" placeholder="B:"> <br>
+      <input type="number" id="inC" value="0" placeholder="C:"> <br>
+      <button type="button" onclick="compute()">Compute</button> <br>
+      <br>
+      <div id="divOutput"></div>
+  </body>
+</html>

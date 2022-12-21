@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      select{
+        min-width: 200px;
+      }
+      #divError{
+        color:red;
+      }
+    </style>
+    <script type="text/javascript">
+      function showSelectedClicked(){
+        var divError = document.getElementById("divError")
+        var olOutput = document.getElementById("olOutput")
+        var list = document.getElementById("selArticles")
+        var divPrice = document.getElementById("divPrice")
+
+        if(list.length == 0){
+          divError.innerHTML = "There are no items in the list."
+        }
+        else{
+          divError.innerHTML = olOutput.innerHTML = ""
+          var selectionCounter = 0
+          var sum = 0
+          for(var i=0; i<list.length; i++){
+            if(list.options[i].selected == true){
+              selectionCounter++
+              sum += parseFloat(list.options[i].value)
+              olOutput.innerHTML += "<li>"+list.options[i].text+"</li>"
+            }
+          }
+          if(selectionCounter==0){
+            divPrice.innerHTML = ""
+            divError.innerHTML = "No items selected."
+          }
+          else{
+            divPrice.innerHTML = "Total price: "+sum+"€"
+          }
+        }
+      }
+        function showInverseClicked(){
+          var divError = document.getElementById("divError")
+          var olOutput = document.getElementById("olOutput")
+          var list = document.getElementById("selArticles")
+          var divPrice = document.getElementById("divPrice")
+
+          if(list.length == 0){
+            divError.innerHTML = "There are no items in the list."
+          }
+          else{
+            var sum = 0
+            divError.innerHTML = olOutput.innerHTML = ""
+            for(var i=list.length-1; i>=0; i--){
+              sum += parseFloat(list.options[i].value)
+              olOutput.innerHTML += "<li>"+list.options[i].text+"</li>"
+            }
+            divPrice.innerHTML = "Total price: "+sum+"€"
+          }
+        }
+        function showAllClicked(){
+          var divError = document.getElementById("divError")
+          var olOutput = document.getElementById("olOutput")
+          var list = document.getElementById("selArticles")
+          var divPrice = document.getElementById("divPrice")
+
+          if(list.length == 0){
+            divError.innerHTML = "There are no items in the list."
+          }
+          else{
+            var sum = 0
+            divError.innerHTML = olOutput.innerHTML = ""
+            for(var i=0; i<list.length; i++){
+              sum += parseFloat(list.options[i].value)
+              olOutput.innerHTML += "<li>"+list.options[i].text+"</li>"
+            }
+            divPrice.innerHTML = "Total price: "+sum+"€"
+          }
+        }
+
+        function add(){
+          var input = document.getElementById("inArticle").value.trim()
+          var price = parseFloat(document.getElementById("inPrice").value)
+          var amount = parseInt(document.getElementById("inAmount").value)
+          var list = document.getElementById("selArticles")
+          var divError = document.getElementById("divError")
+
+          if(input == ""){
+            divError.innerHTML = "Please type in an article."
+          }
+          else{
+            divError.innerHTML = ""
+            list.innerHTML += "<option value='"+(amount*price)+"'>"+input+" ("+amount+"x "+price+"€)</option>"
+          }
+        }
+    </script>
+  </head>
+  <body>
+      <div id="divError">
+
+      </div>
+      Article: <input type="text" id="inArticle" autofocus> <br>
+      Price: <input type="number" id="inPrice" min="0" step=".01"> <br>
+      Amount: <input type="number" id="inAmount" min="1"> <br>
+      <button type="button" onclick="add()">Add</button> <br><br>
+      <u>List of articles:</u><br>
+      <select id="selArticles" multiple>
+
+      </select>
+      <br>
+      <button type="button" onclick="showAllClicked()">Show all</button>
+      <button type="button" onclick="showInverseClicked()">Show inverse</button>
+      <button type="button" onclick="showSelectedClicked()">Show selected</button>
+
+      <br>
+      <ol id="olOutput">
+
+      </ol>
+      <div id="divPrice">
+
+      </div>
+  </body>
+</html>

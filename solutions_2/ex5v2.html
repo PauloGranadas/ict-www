@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      img{
+        height: 400px;
+      }
+      input{
+        width:200px;
+      }
+    </style>
+    <script type="text/javascript">
+      function showPokerCard(){
+        var number = document.getElementById("inCardNumber").value
+        var color = document.getElementById("inColor").value
+        document.getElementById("divOutput").innerHTML = "<img src='img/cards/"+number+color+".png'>"
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="inCardNumber" value="" autofocus placeholder="Put in a card number (1-14):">
+  <br>
+    <!-- <input type="text" id="inColor" value=""  placeholder="Put in a color (s,h,d,c)"> -->
+
+    Color:
+    <select id="inColor">
+      <option value="c">Clubs</option>
+      <option value="s">Spade</option>
+      <option value="d">Diamond</option>
+      <option value="h">Heart</option>
+    </select>
+  <br>
+    <button type="button" onclick="showPokerCard()">Show image!</button>
+
+    <div id="divOutput">
+
+    </div>
+  </body>
+</html>

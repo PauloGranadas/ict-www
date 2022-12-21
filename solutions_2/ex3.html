@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+        function fillList(){
+          var choice1 = prompt("What's your favourite meal?")
+          var choice2 = prompt("What's your second favourite meal?")
+          var choice3 = prompt("What's your third favourite meal?")
+
+          document.getElementById("olFoodList").innerHTML = "<li>"+choice1+"" + "<li>"+choice2+"" + "<li>"+choice3+"</li>"
+        }
+    </script>
+  </head>
+  <body onload="fillList()">
+      <ol id="olFoodList"></ol>
+  </body>
+</html>

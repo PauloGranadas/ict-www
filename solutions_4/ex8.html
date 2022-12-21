@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      #divError{
+        color: red;
+      }
+    </style>
+    <script type="text/javascript">
+        function deleteClicked(){
+          var selSeries = document.getElementById("selSeries")
+          var index = selSeries.selectedIndex
+
+          if(index>=0){
+            selSeries.options[index].outerHTML = ""
+          }
+        }
+
+        function addClicked(){
+            var series = document.getElementById("inSeries").value.trim()
+            var divError = document.getElementById("divError")
+            var selSeries = document.getElementById("selSeries")
+            var divOutput = document.getElementById("divOutput")
+
+            if(series.length < 3){
+              divError.innerHTML = "Invalid series";
+            }
+            else{
+              divError.innerHTML = ""
+              selSeries.innerHTML += "<option value='"+series+"'>"+series+"</option>"
+              divOutput.innerHTML = "Number of items: "+selSeries.options.length
+              selSeries.options[selSeries.length-1].selected = true
+            }
+        }
+    </script>
+  </head>
+  <body>
+      <div id="divError">
+
+      </div>
+      <br>
+      Series: <input autofocus type="text" id="inSeries" value=""> <button type="button" onclick="addClicked()">Add</button><br>
+      List of series: <br>
+      <select id="selSeries" multiple>
+
+      </select> <br>
+      <div id="divOutput">
+        Number of items: 0
+      </div>
+      <br>
+      <button type="button" onclick="deleteClicked()">Delete</button>
+  </body>
+</html>

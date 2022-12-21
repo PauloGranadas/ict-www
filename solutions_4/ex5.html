@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      #divError{
+        color: red;
+      }
+    </style>
+    <script type="text/javascript">
+        function addClicked(){
+            var series = document.getElementById("inSeries").value.trim()
+            var divError = document.getElementById("divError")
+            var selSeries = document.getElementById("selSeries")
+
+            if(series.length < 3){
+              divError.innerHTML = "Invalid series";
+            }
+            else{
+              divError.innerHTML = ""
+              selSeries.innerHTML += "<option value='"+series+"'>"+series+"</option>"
+            }
+        }
+    </script>
+  </head>
+  <body>
+      <div id="divError">
+
+      </div>
+      <br>
+      Series: <input autofocus type="text" id="inSeries" value=""> <button type="button" onclick="addClicked()">Add</button><br>
+      List of series: <br>
+      <select id="selSeries" multiple>
+
+      </select>
+  </body>
+</html>

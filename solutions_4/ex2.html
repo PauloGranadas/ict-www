@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      #divError{
+        color: red
+      }
+      #divOutput{
+        color: lime
+      }
+    </style>
+    <script type="text/javascript">
+          function orderClicked(){
+            var article = document.getElementById("selArticle").value
+            var divError = document.getElementById("divError")
+            var divOutput = document.getElementById("divOutput")
+            var amount = document.getElementById("selAmount").value
+
+              divOutput.innerHTML = "Thank you for ordering "+amount+"x "+article;
+              divError.innerHTML = ""
+          }
+    </script>
+  </head>
+  <body>
+      Article: <select id="selArticle">
+                  <option value="1kg apples">1kg apples</option>
+                  <option value="Gaming mouse">Gaming mouse</option>
+                  <option value="Gaming keyboard">Gaming keyboard</option>
+                  <option value="PS4 - God of War">PS4 - God of War</option>
+                  <option value="4K 27in monitor">4K 27in monitor</option>
+                  <option value="Orange jus">Orange jus</option>
+                  <option value="10€ paysafecard">10€ paysafecard</option>
+                </select>
+                <br>
+      Amount: <select id="selAmount">
+                  <option value="1">x1</option>
+                  <option value="2">x2</option>
+                  <option value="3">x3</option>
+                  <option value="4">x4</option>
+                  <option value="5">x5</option>
+                </select>
+      <br>
+      <button type="button" onclick="orderClicked()">Order now</button>
+      <br>
+      <div id="divOutput">
+
+      </div>
+  </body>
+</html>

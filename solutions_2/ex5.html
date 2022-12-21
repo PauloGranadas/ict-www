@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      img{
+        height: 400px;
+      }
+    </style>
+    <script type="text/javascript">
+      function showPokerCard(){
+        var number = prompt("Please choose a number between 1 and 14:")
+        var color = prompt("Please choose a color (s,d,c,h):")
+        document.getElementById("divOutput").innerHTML = "<img src='img/cards/"+number+color+".png'>"
+      }
+    </script>
+  </head>
+  <body onload="showPokerCard()">
+    <div id="divOutput">
+
+    </div>
+  </body>
+</html>
