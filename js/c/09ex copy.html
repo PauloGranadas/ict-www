@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Tic Tac Toe</title>
+        <link rel="stylesheet" type="text/css" href="boxmodel-student.css">
+        <meta charset="UTF-8">
+        <style>
+            body{
+                height: 100vh;
+            }
+            .grid-container{
+                display: grid;
+                height:100vi;
+                grid-template-columns: 100px 100px 100px;
+                grid-template-rows: 100px 100px 100px;
+            }
+
+            .grid-item{
+                border: 1px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            }
+            .grid-item:hover{
+                background-color: red;
+            }
+        </style>
+        <script>
+            function tttGame(cicked){
+                // verificar se a celula esta vazia
+                // alternar entre X e O
+                
+                
+                var MyClick = document.getElementById(clicked).value;
+
+            }
+
+        </script>
+    </head>
+
+<body>
+
+    <div id="game" class="grid-container" onclick="tttGame()">
+        <div id="a1" class="grid-item" onclick="tttGame('a1')"></div>
+        <div id="a2" class="grid-item" onclick="tttGame('a2')"></div>
+        <div id="a3" class="grid-item" onclick="tttGame('a3')"></div>
+        <div id="b1" class="grid-item" onclick="tttGame('b1')"></div>
+        <div id="b2" class="grid-item" onclick="tttGame('b2')"></div>
+        <div id="b3" class="grid-item" onclick="tttGame('b3')"></div>
+        <div id="c1" class="grid-item" onclick="tttGame('c1')"></div>
+        <div id="c2" class="grid-item" onclick="tttGame('c2')"></div>
+        <div id="c3" class="grid-item" onclick="tttGame('c3')"></div>
+    </div>
+
+</body>
+</html>

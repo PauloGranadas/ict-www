@@ -13,22 +13,47 @@
             img{
                 height: 20px;
             }
+            .divError{
+                color: red;
+            }
 
         </style>
         <script>/* javaScript */
-        function checkData(){
+        function addStudent(){
             var name = document.getElementById("name").value;
-            var grade = document.getElementById("grade").value
-
-            if (name.length < 3){
-                document.getElementById("errorMessage").innerHTML="Invalid name: ate least 3 <br>characters required";
-                document.getElementById("errorMessage").style.color="red";
-
+            var grade = document.getElementById("grade").value;
+            // var gender = document.getElementById("genderButton").value;
+                        
+           /*  if(gender == M){
+                gender = "/js/c/img/m.png"
             }
-            else if(isNaN(grade)){
-                document.getElementById("errorMessage").innerHTML="Invalid grade: must be a<br>number";
-                document.getElementById("errorMessage").style.color="red";
+            else{
+                gender = "/js/c/img/w.png"
+            }            
+ */
+            document.getElementById("errorMessage").innerHTML="";
+            
+            if(name.length == 0 || grade.length == 0){
+                document.getElementById("errorMessage").innerHTML+="Please fill in the fields.<br>";
             }
+            else if (name.length < 3){
+                document.getElementById("errorMessage").innerHTML+="Invalid name: ate least 3 <br>characters required<br>";
+                document.getElementById("name").style.border="1px solid red";
+            }
+            else if (isNaN(grade)){
+                document.getElementById("errorMessage").innerHTML+="Invalid grade: must be a<br>number<br>";
+                document.getElementById("grade").style.border="1px solid red";
+            }
+            else if (parseInt (grade) < 1 || parseInt (grade) > 60){
+                document.getElementById("errorMessage").innerHTML+="Invalid grade: <br>must be bettwen 1 and 60<br>";
+                document.getElementById("grade").style.border="1px solid red";
+            }
+            if (document.getElementById("errorMessage").innerHTML==""){
+                document.getElementById("listOutput").innerHTML += "<li>" + name + "(" + grade + ")" + "</li>";
+                
+                document.getElementById("grade").style.border="1px solid black";
+                document.getElementById("name").style.border="1px solid black";
+            }           
         }
        
         </script>
@@ -37,23 +62,23 @@
 <table>
     <tr>
         <td>
-            <div id="errorMessage"></div><br>
+            <div class="divError" id="errorMessage"></div><br>
             Student Name: <br>
             <input id="name" type="text"><br>
             Grade: <br>
             <input id="grade" type="text"><br>
+            <!-- <input id="genderButton" type="radio" name="genderSelection" value="M" checked><img src="/js/c/img/m.png" alt="">
+            <input id="genderButton" type="radio" name="genderSelection" value="W"><img src="/js/c/img/w.png" alt=""> -->
         </td>
         
     </tr>
     <td>
-        <button type="button" onclick="checkData()">ADD</button>
-        <ol>
-            <li>Dren (45) <img src="/js/c/img/m.png" alt=""></li>
-            <li>Sandrina (48) <img src="/js/c/img/w.png" alt=""></li>
+        <button type="button" onclick="addStudent()">ADD</button>
+        <ol id="listOutput">
+            
         </ol>
         
-        <!-- <input id="radioButton" type="radio" name="genderSelection" value="M" checked>
-        <input id="radioButton" type="radio" name="genderSelection" value="W"> -->
+        
         
     </td>
 </table>

@@ -15,7 +15,7 @@
         <script>/* javaScript */
         function checkHours(){
             var hours = parseFloat(document.getElementById("hours").value);
-            if ( hours < 8 && hours > 17){
+            if ( hours < 8 || hours > 17){
                 document.getElementById("outMessage").innerHTML="Sorry, but the coffe Shop is closed";
                 document.getElementById("outMessage").style.color="red";
             }

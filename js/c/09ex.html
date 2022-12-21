@@ -12,11 +12,15 @@
                 display: grid;
                 height:100vi;
                 grid-template-columns: 100px 100px 100px;
-                grid-template-rows: 100px 100px 100px;
+                grid-template-rows: 100px 100px 100px 100px;
             }
 
             .grid-item{
                 border: 1px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: x-large;
 
             }
             .grid-item:hover{
@@ -25,24 +29,157 @@
         </style>
         <script>
 
+            var lasPlayed = "";
 
+            function tttGame_a1(){                           
+                if (lasPlayed == "x"){
+                    lasPlayed = "o"
+                }
+                else{
+                    lasPlayed = "x";
+                }
+                document.getElementById("a1").innerHTML=lasPlayed;
+                checkGame();  
+            }
+            function tttGame_a2(){                           
+                if (lasPlayed == "x"){
+                    lasPlayed = "o"
+                }
+                else{
+                    lasPlayed = "x";
+                }
+                document.getElementById("a2").innerHTML=lasPlayed;  
+                checkGame();   
+            }
+            function tttGame_a3(){                           
+                if (lasPlayed == "x"){
+                    lasPlayed = "o"
+                }
+                else{
+                    lasPlayed = "x";
+                }
+                document.getElementById("a3").innerHTML=lasPlayed;  
+                checkGame();   
+            }
+            function tttGame_b1(){                           
+                if (lasPlayed == "x"){
+                    lasPlayed = "o"
+                }
+                else{
+                    lasPlayed = "x";
+                }
+                document.getElementById("b1").innerHTML=lasPlayed;   
+                checkGame();  
+            }
+            function tttGame_b2(){                           
+                if (lasPlayed == "x"){
+                    lasPlayed = "o"
+                }
+                else{
+                    lasPlayed = "x";
+                }
+                document.getElementById("b2").innerHTML=lasPlayed;  
+                checkGame();   
+            }
+            function tttGame_b3(){                           
+                if (lasPlayed == "x"){
+                    lasPlayed = "o"
+                }
+                else{
+                    lasPlayed = "x";
+                }
+                document.getElementById("b3").innerHTML=lasPlayed;  
+                checkGame();   
+            }
+            function tttGame_c1(){                           
+                if (lasPlayed == "x"){
+                    lasPlayed = "o"
+                }
+                else{
+                    lasPlayed = "x";
+                }
+                document.getElementById("c1").innerHTML=lasPlayed;    
+                checkGame(); 
+            }
+            function tttGame_c2(){                           
+                if (lasPlayed == "x"){
+                    lasPlayed = "o"
+                }
+                else{
+                    lasPlayed = "x";
+                }
+                document.getElementById("c2").innerHTML=lasPlayed;  
+                checkGame();   
+            }
+            function tttGame_c3(){                           
+                if (lasPlayed == "x"){
+                    lasPlayed = "o"
+                }
+                else{
+                    lasPlayed = "x";
+                }
+                document.getElementById("c3").innerHTML=lasPlayed;
+                checkGame();
+            }
+            function checkGame(){
+                var celulA1 = document.getElementById("a1").innerHTML;
+                var celulA2 = document.getElementById("a2").innerHTML;
+                var celulA3 = document.getElementById("a3").innerHTML;
+                var celulB1 = document.getElementById("b1").innerHTML;
+                var celulB2 = document.getElementById("b2").innerHTML;
+                var celulB3 = document.getElementById("b3").innerHTML;
+                var celulC1 = document.getElementById("c1").innerHTML;
+                var celulC2 = document.getElementById("c2").innerHTML;
+                var celulC3 = document.getElementById("c3").innerHTML;
 
+                if((celulA1 == "x" && celulA2 == "x" && celulA3 == "x") ||
+                 (celulB1 == "x" && celulB2 == "x" && celulB3 == "x") ||
+                  (celulC1 == "x" && celulC2 == "x" && celulC3 == "x") ||
+                  (celulA1 == "x" && celulB1 == "x" && celulC1 == "x") ||
+                  (celulA2 == "x" && celulB2 == "x" && celulC2 == "x") ||
+                  (celulA3 == "x" && celulB3 == "x" && celulC3 == "x") ||
+                   (celulA1 == "x" && celulB2 == "x" && celulC3 == "x") ||
+                    (celulA3 == "x" && celulB2 == "x" && celulC1 == "x") ){
+                        document.getElementById("resultOutput").innerHTML="x is the winner";
+                        // console.log("X winner");        
+
+                }
+                
+                else if((celulA1 == "o" && celulA2 == "o" && celulA3 == "o") ||
+                 (celulB1 == "o" && celulB2 == "o" && celulB3 == "o") ||
+                  (celulC1 == "o" && celulC2 == "o" && celulC3 == "o") ||
+                  (celulA1 == "o" && celulB1 == "o" && celulC1 == "o") ||
+                  (celulA2 == "o" && celulB2 == "o" && celulC2 == "o") ||
+                  (celulA3 == "o" && celulB3 == "o" && celulC3 == "o") ||
+                   (celulA1 == "o" && celulB2 == "o" && celulC3 == "o") ||
+                    (celulA3 == "o" && celulB2 == "o" && celulC1 == "o") ){
+                        document.getElementById("resultOutput").innerHTML="o is the winner";
+                        // console.log("O winner");
+                }
+                else{
+                    document.getElementById("resultOutput").innerHTML="Sorry: No winner";
+                }               
+            }
         </script>
     </head>
 
 <body>
 
-    <div class="grid-container">
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
+    <div id="game" class="grid-container">
+        <div id="a1" class="grid-item" onclick="tttGame_a1()"></div>
+        <div id="a2" class="grid-item" onclick="tttGame_a2()"></div>
+        <div id="a3" class="grid-item" onclick="tttGame_a3()"></div>
+        <div id="b1" class="grid-item" onclick="tttGame_b1()"></div>
+        <div id="b2" class="grid-item" onclick="tttGame_b2()"></div>
+        <div id="b3" class="grid-item" onclick="tttGame_b3()"></div>
+        <div id="c1" class="grid-item" onclick="tttGame_c1()"></div>
+        <div id="c2" class="grid-item" onclick="tttGame_c2()"></div>
+        <div id="c3" class="grid-item" onclick="tttGame_c3()"></div>
+        <div id="resultOutput"></div>    
+        <!-- <div id="testButton"><button type="button" onclick="checkGame()">testar</button></div> -->
     </div>
+    
+    
 
 </body>
 </html>
