@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New File</title>
+        <style>/* CSS */
+        select{
+            width: 200px;
+        }
+
+
+        </style>
+        <script>/* javaScript */
+        function addIntem(){
+            var addIntem = document.getElementById("inputUser").value;
+            if (addIntem.length > 3){
+                document.getElementById("userList").innerHTML += "<option value='" + inputUser + "'>"  + addIntem + "</option>";
+                document.getElementById("errorMessage").innerHTML ="";
+                document.getElementById("outputList").innerHTML =""; //limpa a exibição da lista cada vez que botao e pressionado
+            }
+            else{
+                document.getElementById("errorMessage").innerHTML = "Please, enter at least 3 caracters!";
+                document.getElementById("errorMessage").style.color ="red";
+            }           
+        }
+
+        function showUserList(){
+            var listLenght = document.getElementById("userList").length;
+            document.getElementById("outputList").innerHTML="";
+
+            if (listLenght == 0){
+                document.getElementById("outputList").innerHTML="There are no intems in the list"
+            }
+            else{
+                for (i = 0; i < listLenght; i++){
+                var indexSelected = document.getElementById("userList").options[i].text;
+                // var displayIndex = indexSelected.text;        //abreviado posterioemente para o que ficou
+                // document.getElementById("outputList").innerHTML += '<li>' + displayIndex + '</li>';
+                document.getElementById("outputList").innerHTML += '<li>' + indexSelected + '</li>';
+                }
+            }
+        }
+        //mostra lista em ordem invertida
+        function showReverseList(){
+            var listLenght = document.getElementById("userList").length;
+            document.getElementById("outputList").innerHTML="";
+
+            if (listLenght == 0){
+                document.getElementById("outputList").innerHTML="There are no intems in the list"
+            }
+            else{
+                for (i = listLenght-1; i > -1; i--){
+                var indexSelected = document.getElementById("userList").options[i].text;
+                // var displayIndex = indexSelected.text;        //abreviado posterioemente para o que ficou
+                // document.getElementById("outputList").innerHTML += '<li>' + displayIndex + '</li>';
+                document.getElementById("outputList").innerHTML += '<li>' + indexSelected + '</li>';
+                }
+            }
+        }
+
+            
+        </script>
+
+</head>
+    <body>
+
+        Article: <input type="text" id="inputUser"><br>
+        <button type="button" onclick="addIntem()">ADD</button><br>
+        List of Articles:<br>
+        <div id="errorMessage"></div><br>
+        
+        <select id="userList" multiple>
+            
+
+        </select><br>
+        <button type="button" onclick="showUserList()">ShowAll</button>
+        <button type="button" onclick="showReverseList()">Show Reverse List</button>
+        <button type="button" onclick="showSelected()">Show Selected</button>
+        <ol id="outputList"></ol>
+
+    </body>
+
+</html>
