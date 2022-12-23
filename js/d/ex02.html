@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New File</title>
+        <style>/* CSS */
+
+
+        </style>
+        <script>/* javaScript */
+            function order(){
+                var article = document.getElementById("article").value;
+                
+                var amount = document.getElementById("amounts").value;
+                
+                /* if(article.length < 3){
+                    document.getElementById("errorMessage").innerHTML+=
+                    "Invalid Article: ate least 3 <br>characters required<br>";
+                    document.getElementById("errorMessage").style.color="red";
+                    document.getElementById("divOutput").innerHTML="";
+                    
+                } */
+                                 
+                document.getElementById("divOutput").innerHTML="Thanks for your order " + amount + " " + article;
+                document.getElementById("divOutput").style.color="green";
+                document.getElementById("errorMessage").innerHTML="";
+                
+            }
+        </script>
+        
+
+</head>
+    <body>
+
+        <label><select name="" id="article">
+            <option value="empty">---Please Choose---</option>
+            <option name="1 Kg of Apples"  value="apple">1 Kg of Apples</option>
+            <option value="mouse">Gaming Mouse</option>
+            <option value="keyboard">Gaming Keyboard</option>
+            <option value="ps4">PS4 - God of War</option>
+            <option value="monitor">4K 27in monitor</option>
+            <option value="jus">Orange jus</option>
+            <option value="paysafecard">10€ paysafecard</option>
+        </select></label>
+        <div id="showArticle"></div>
+        <!-- <input type="text" id="article"> -->
+        <br>
+        <select  id="amounts">
+            <option value="x1">X 1</option>
+            <option value="x2">X 2</option>
+            <option value="x3">X 3</option>
+            <option value="x4">X 4</option>    
+        </select>
+        <br>
+        <button type="text" onclick="order()">Order Now</button>
+        <div id="divOutput"></div>
+        <div id="errorMessage"></div>
+
+
+    </body>
+
+</html>

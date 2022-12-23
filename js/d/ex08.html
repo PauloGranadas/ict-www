@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New File</title>
+        <style>/* CSS */
+                #choosenList{
+                width: 200px;
+                }
+
+        </style>
+        <script>/* javaScript */
+        function addSeries(){
+            var userInput = document.getElementById("inputField").value;
+            if (userInput.length > 3){
+                var addUserSeries = document.getElementById("choosenList").innerHTML += "<option value=''>" + userInput + "</option>";
+                document.getElementById("warning").innerHTML ="";
+            }
+            else{
+                document.getElementById("warning").innerHTML ="Please enter more than 3 caracters!";
+                document.getElementById("warning").style.color="red";
+            }
+           
+            var numberOfItems = document.getElementById("choosenList").length;
+            document.getElementById("counting").innerHTML = "Number of items: " + numberOfItems ;
+
+        }
+        function deletClicked(){
+
+            var mySeriesSelect = document.getElementById("choosenList");
+            var selectedSeriesIndex = mySeriesSelect.selectedIndex;
+            if (selectedSeriesIndex >= 0){
+                mySeriesSelect.options[selectedSeriesIndex].outerHTML ="";
+                document.getElementById("counting").innerHTML ="Number of items: " + mySeriesSelect.length ;
+
+            }
+            
+        }
+            
+        </script>
+
+</head>
+    <body>
++
+        <input id="inputField"type="text"><button type="button" onclick="addSeries()">ADD</button><br>
+        <div id="warning"></div>
+        <p>list of Series:</p>
+        
+        <select id ="choosenList" multiple>
+
+        </select><br>
+        <button type="button" onclick="deletClicked()">Delete</button>
+        <div id="counting"></div>
+        
+        
+
+        
+
+    </body>
+
+</html>

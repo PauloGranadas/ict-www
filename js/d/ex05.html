@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New File</title>
+        <style>/* CSS */
+            #choosenList{
+                width: 200px;
+            }
+
+        </style>
+        <script>/* javaScript */
+        function addSeries(){
+            var userInput = document.getElementById("inputField").value;
+            var addUserSeries = document.getElementById("choosenList").innerHTML += "<option value=''>" + userInput + "</option>";
+
+        }
+            
+        </script>
+
+</head>
+    <body>
+
+        <input id="inputField"type="text"><button type="button" onclick="addSeries()">ADD</button><br>
+        list of Series: <br>
+        <div ></div>
+        <select id="choosenList" multiple></select>
+        
+
+        
+
+    </body>
+
+</html>

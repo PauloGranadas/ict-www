@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New File</title>
+        <style>/* CSS */
+
+
+        </style>
+        <script>/* javaScript */
+            
+                function order(){amount
+                var article = document.getElementById("article").value;
+                var amount = document.getElementById("amounts").value;
+                
+                
+                var selectedArticleIndex = document.getElementById("article").selectedIndex;
+
+                var selectedArticleReadableName = document.getElementById("article").options[selectedArticleIndex].text;
+                // isto tambem significa o abaixo, por isso o uso de variavel, para abreviar
+                // var selectedArticleReadableName = document.getElementById("article").options[document.getElementById("article").selectedIndex].text;
+
+                document.getElementById("divOutput").innerHTML="Thanks for your order: " + amount + " -> " + selectedArticleReadableName;
+
+                document.getElementById("divOutput").style.color="green";
+                document.getElementById("")       
+            }
+            function showImage(){
+                var artImage = document.getElementById("article").value;
+                document.getElementById("showArticle").innerHTML = "<img src='img/" + artImage + ".jpg' style='width: 100px'>";
+                // console.log(artImage);
+            }
+        </script>
+<img src="" alt="">
+
+</head>
+    <body>
+        Articles: 
+        <label><select name="" id="article" onchange="showImage()"></label>
+            <option value="no-image">---Please Choose---</option>
+            <option value="apples">1 Kg of Apples</option>
+            <option value="gamingmouse">Gaming Mouse</option>
+            <option value="keyboard">Gaming Keyboard</option>
+            <option value="gow-ps4">PS4 - God of War</option>
+            <option value="monitor">4K 27in monitor</option>
+            <option value="orangejus">Orange jus</option>
+            <option value="paysafecard">10€ paysafecard</option>
+        </select><br>
+        
+        <div id="showArticle"> </div>
+        Preview:
+
+        <br>
+        Amount: 
+        <select  id="amounts">
+            <option value="x1">X 1</option>
+            <option value="x2">X 2</option>
+            <option value="x3">X 3</option>
+            <option value="x4">X 4</option>    
+        </select>
+        <br>
+        <button type="text" onclick="order()">Order Now</button>
+        <div id="divOutput"></div>
+
+
+    </body>
+
+</html> 

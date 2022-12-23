@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New File</title>
+        <style>/* CSS */
+        </style>
+        <script>/* javaScript */
+        
+        var i = 0;
+        // i < select.length
+        for (i=0;i<5;i++){
+            console.log(i+") hi")
+            // console.log(select.option[i].value);
+        }
+
+        
+        function runloop(){
+            var inputUser = document.getElementById("inputUser").value;
+            document.getElementById("divOutput").innerHTML="";
+            for (var i=0; i < inputUser; i = i + 1){
+                document.getElementById("divOutput").innerHTML += i + "<br>";
+            }
+            
+        }
+
+
+            
+        </script>
+
+</head>
+    <body>
+        <button type="button" onclick="runloop()">Run Loop</button>
+        <div id="divOutput"></div>
+        <input type="text" id="inputUser">
+        
+
+    </body>
+
+</html>
